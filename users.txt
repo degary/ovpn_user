@@ -1,0 +1,6 @@
+denghui,group
+woshi,shui
+nishi,shui
+tashi,shui
+aaa,bbb
+woshi
