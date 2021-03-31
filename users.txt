@@ -1,6 +1,3 @@
-denghui,group
-woshi,shui
-nishi,shui
-tashi,shui
-aaa,bbb
-woshi
+user,group
+user2,group2
+user3,group3
