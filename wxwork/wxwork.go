@@ -36,14 +36,14 @@ func GetToken(rds *redis.Client, corpid, corpsecret string) (string, error) {
 	return foo["access_token"], nil
 }
 
-func SendMsg(user, msg, token string) error {
+func SendMsg(user, msg, token string, agentid int) error {
 	url := "https://qyapi.weixin.qq.com/cgi-bin/message/send"
 	message := fmt.Sprintf("### 您的VPN账号已开通\n"+
 		">用户名：<font color=\"info\">%s</font>\n"+
 		">密  码：<font color=\"info\">%s</font>\n"+
 		">[下载：VPN使用手册（必看）](http://www.baidu.com)\n"+
-		">[下载：谷歌身份验证器-安卓（必备）](http://XXX)\n"+
-		">[下载：VPN系统App-安卓系统](http://XXX)\n", user, msg)
+		">[下载：谷歌身份验证器-安卓（必备）](http://tools.peogoo.com/download/google.authenticator2_5.10.apk)\n"+
+		">[下载：VPN系统App-安卓系统](http://tools.peogoo.com/download/openvpn-1597289328.apk)\n", user, msg)
 	content := map[string]interface{}{
 		"content": message,
 	}
@@ -55,7 +55,7 @@ func SendMsg(user, msg, token string) error {
 	body := map[string]interface{}{
 		"touser":                   user,
 		"msgtype":                  "markdown",
-		"agentid":                  1000023,
+		"agentid":                  agentid,
 		"markdown":                 content,
 		"enable_duplicate_check":   0,
 		"duplicate_check_interval": 1800,

@@ -76,7 +76,7 @@ func main() {
 			continue
 		}
 		//发送信息
-		err = wxwork.SendMsg(user.UserName, passwordforuser, token)
+		err = wxwork.SendMsg(user.UserName, passwordforuser, token, 1000023)
 		if err != nil {
 			fmt.Printf("发送用户%s信息到企业微信失败,err:%s\n", user.UserName, err.Error())
 		}
