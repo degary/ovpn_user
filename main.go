@@ -43,6 +43,7 @@ func main() {
 	//获取token
 	cid := cfg.Section("Wxwork").Key("CorpId").String()
 	ckey := cfg.Section("Wxwork").Key("CorpSecret").String()
+	agentid, _ := cfg.Section("Wxwork").Key("AgentId").Int()
 	token, err := wxwork.GetToken(rds, cid, ckey)
 	if err != nil {
 		fmt.Println(err)
@@ -76,7 +77,7 @@ func main() {
 			continue
 		}
 		//发送信息
-		err = wxwork.SendMsg(user.UserName, passwordforuser, token, 1000023)
+		err = wxwork.SendMsg(user.UserName, passwordforuser, token, agentid)
 		if err != nil {
 			fmt.Printf("发送用户%s信息到企业微信失败,err:%s\n", user.UserName, err.Error())
 		}

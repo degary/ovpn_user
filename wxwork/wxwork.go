@@ -42,8 +42,8 @@ func SendMsg(user, msg, token string, agentid int) error {
 		">用户名：<font color=\"info\">%s</font>\n"+
 		">密  码：<font color=\"info\">%s</font>\n"+
 		">[下载：VPN使用手册（必看）](http://www.baidu.com)\n"+
-		">[下载：谷歌身份验证器-安卓（必备）](http://tools.peogoo.com/download/google.authenticator2_5.10.apk)\n"+
-		">[下载：VPN系统App-安卓系统](http://tools.peogoo.com/download/openvpn-1597289328.apk)\n", user, msg)
+		">[下载：谷歌身份验证器-安卓（必备）](http://xxx)\n"+
+		">[下载：VPN系统App-安卓系统](http://xxx)\n", user, msg)
 	content := map[string]interface{}{
 		"content": message,
 	}
