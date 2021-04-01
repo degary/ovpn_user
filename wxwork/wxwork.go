@@ -38,10 +38,12 @@ func GetToken(rds *redis.Client, corpid, corpsecret string) (string, error) {
 
 func SendMsg(user, msg, token string) error {
 	url := "https://qyapi.weixin.qq.com/cgi-bin/message/send"
-	message := fmt.Sprintf("**您的OPENVPN账号已开通**\n"+
-		">用户名:<font color=\"info\">%s</font>\n"+
-		">密 码: <font color=\"warning\">%s</font>\n"+
-		">客户端下载地址: <font color=\"comment\">xxxxx</font>\n", user, msg)
+	message := fmt.Sprintf("### 您的VPN账号已开通\n"+
+		">用户名：<font color=\"info\">%s</font>\n"+
+		">密  码：<font color=\"info\">%s</font>\n"+
+		">[下载：VPN使用手册（必看）](http://www.baidu.com)\n"+
+		">[下载：谷歌身份验证器-安卓（必备）](http://XXX)\n"+
+		">[下载：VPN系统App-安卓系统](http://XXX)\n", user, msg)
 	content := map[string]interface{}{
 		"content": message,
 	}
